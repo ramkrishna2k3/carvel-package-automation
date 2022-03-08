@@ -1,0 +1,14 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  name: APP_NAME.bitnami.vmware.com
+spec:
+  displayName: "APP_NAME app"
+  longDescription: "APP_NAME app consisting of a k8s deployment and service"
+  shortDescription: "APP_NAME app for demoing"
+  categories:
+  - nginx
+  - http
+  - web
+  - www
+  - reverse proxy
