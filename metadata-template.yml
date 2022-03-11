@@ -7,8 +7,4 @@ spec:
   longDescription: "APP_NAME app consisting of a k8s deployment and service"
   shortDescription: "APP_NAME app for demoing"
   categories:
-  - nginx
-  - http
-  - web
-  - www
-  - reverse proxy
+  - APP_NAME
