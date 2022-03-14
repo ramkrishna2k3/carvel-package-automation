@@ -9,7 +9,7 @@ spec:
   refName: APP_NAME.bitnami.vmware.com
   version: #@ data.values.version
   releaseNotes: |
-        Initial release of the APP_NAME app package
+        Initial release of the APP_NAME Carvel package
   valuesSchema:
     openAPIv3: #@ yaml.decode(data.values.openapi)["components"]["schemas"]["dataValues"]
   template:

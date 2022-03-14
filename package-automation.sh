@@ -17,7 +17,10 @@ imgpkg push -b ${REPO_HOST}/packages/${APP_NAME}:${VERSION} -f package-contents
 ytt -f package-contents/config/values.yml --data-values-schema-inspect -o openapi-v3 > schema-openapi.yml
 
 cp -f package-template-template.yml package-template.yml
+# For APP_NAME convert first later to capitol ex: Apache
+sed -i "s/APP_NAME Carvel package/${APP_NAME^} Carvel package/g" package-template.yml
 sed -i "s/APP_NAME/${APP_NAME}/g" package-template.yml
+
 sed -i "s/GITHUB_LOGIN/${GITHUB_LOGIN}/g" package-template.yml
 
 mkdir -p my-pkg-repo/.imgpkg my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com
