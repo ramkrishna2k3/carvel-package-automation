@@ -28,6 +28,8 @@ mkdir -p my-pkg-repo/.imgpkg my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com
 ytt -f package-template.yml  --data-value-file openapi=schema-openapi.yml -v version="${VERSION}" > my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com/${VERSION}.yml
 
 cp -f metadata-template.yml my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com/metadata.yml
+# For APP_NAME convert first later to capitol ex: Apache
+sed -i "s/APP_NAME app/${APP_NAME^} app/g" my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com/metadata.yml
 sed -i "s/APP_NAME/${APP_NAME}/g" my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com/metadata.yml
 
 kbld -f my-pkg-repo/packages/ --imgpkg-lock-output my-pkg-repo/.imgpkg/images.yml
