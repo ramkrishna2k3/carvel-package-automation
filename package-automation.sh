@@ -31,6 +31,8 @@ cp -f metadata-template.yml my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com/
 # For APP_NAME convert first later to capitol ex: Apache
 sed -i "s/APP_NAME app/${APP_NAME^} app/g" my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com/metadata.yml
 sed -i "s/APP_NAME/${APP_NAME}/g" my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com/metadata.yml
+# Add all the categorios
+python3 metadata-yml-helper.py my-pkg-repo/packages/${APP_NAME}.bitnami.vmware.com/metadata.yml ${APP_NAME}
 
 kbld -f my-pkg-repo/packages/ --imgpkg-lock-output my-pkg-repo/.imgpkg/images.yml
 

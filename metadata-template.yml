@@ -7,4 +7,3 @@ spec:
   longDescription: "APP_NAME app consisting of a k8s deployment and service"
   shortDescription: "APP_NAME app for demoing"
   categories:
-  - APP_NAME
